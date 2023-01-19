@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    flex: auto;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.interface {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    justify-items: center;
+    align-items: center;
+}
