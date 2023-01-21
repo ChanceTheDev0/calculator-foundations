@@ -40,45 +40,36 @@ function operate(a, operator, b) {
     }
 }
 
-let displayValue = "";
+let currentExpression = "";
+let currentNumber = "";
+let result = 0;
 
 function updateDisplay(btn) {
     if (btn.classList.contains("number")) {
-        if (displayValue.length < maxDigits) {
-            if (displayValue === "0" && btn.innerHTML !== ".") {
-                displayValue = btn.innerHTML;
-            } else {
-                displayValue += btn.innerHTML;
-            }
-        }
+        currentNumber += btn.innerHTML;
+        currentExpression += btn.innerHTML;
+        display.innerHTML = currentExpression;
     } else if (btn.classList.contains("operator")) {
-        if (displayValue === "" && btn.innerHTML === "-") {
-            displayValue = "-";
-        } else if (displayValue !== "" && !currentOperator) {
-            a = parseFloat(displayValue);
-            currentOperator = btn.innerHTML;
-            displayValue = "";
-        }
-    } else if (btn.classList.contains("decimal")) {
-        if (displayValue.indexOf(".") === -1) {
-            displayValue += ".";
-        }
+        currentExpression += btn.innerHTML;
+        let num = parseFloat(currentNumber);
+        currentNumber = "";
+        result = operate(result, currentOperator, num);
+        currentOperator = btn.innerHTML;
+        display.innerHTML = currentExpression;
     } else if (btn.classList.contains("equals")) {
-        if (currentOperator && displayValue) {
-            b = parseFloat(displayValue);
-            displayValue = operate(a, currentOperator, b);
-            currentOperator = null;
-            a = null;
-            b = null;
-        }
+        let num = parseFloat(currentNumber);
+        result = operate(result, currentOperator, num);
+        currentExpression = result;
+        currentNumber = "";
+        currentOperator = "+";
+        display.innerHTML = result;
     } else if (btn.classList.contains("clear")) {
-        displayValue = "";
-        currentOperator = null;
-        a = null;
-        b = null;
+        currentExpression = "";
+        currentNumber = "";
+        result = 0;
+        currentOperator = "+";
+        display.innerHTML = "0";
     }
-
-    display.innerHTML = displayValue;
 }
 
 buttons.forEach(btn => btn.addEventListener('click', e => updateDisplay(e.target)));
