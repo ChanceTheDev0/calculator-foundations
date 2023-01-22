@@ -31,12 +31,10 @@ function operate(a, operator, b) {
             return a + b;
         case '-':
             return a - b;
-        case 'x':
-            return a * b;
+        case 'x':    
+            return a * b;    
         case '/':
             return a / b;
-        default:
-            throw new Error(`Invalid operator: ${operator}`);  
     }
 }
 
@@ -53,7 +51,11 @@ function updateDisplay(btn) {
         currentExpression += btn.innerHTML;
         let num = parseFloat(currentNumber);
         currentNumber = "";
-        result = operate(result, currentOperator, num);
+        if (result === 0) {
+            result = num;
+        } else {
+            result = operate(result, currentOperator, num);
+        }
         currentOperator = btn.innerHTML;
         display.innerHTML = currentExpression;
     } else if (btn.classList.contains("equals")) {
@@ -77,4 +79,18 @@ buttons.forEach(btn => btn.addEventListener('click', e => updateDisplay(e.target
 window.addEventListener('keydown', e => {
     let btn = document.getElementById(e.key); 
     if (btn) updateDisplay(btn); 
+});
+
+function handleDecimal() {
+    if (!currentNumber.includes('.')) {
+        currentNumber += '.';
+        currentExpression += '.';
+        display.innerHTML = currentExpression;
+    }
+}
+
+document.querySelector('.decimal').addEventListener('click', handleDecimal);
+
+window.addEventListener('keydown', e => {
+    if (e.key === '.') handleDecimal();
 });
