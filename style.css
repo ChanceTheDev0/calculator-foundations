@@ -45,7 +45,7 @@ body {
 
 .clear, .zero {
     grid-column: span 2;
-    width: 90%;
+    width: 80%;
     height: 90%;
 }
 
@@ -83,10 +83,27 @@ button:hover, .activated {
         background-color: black;
         display: flex;
         flex-direction: column;
-        height: 60vh;
-        width: 35vh;
+        height: 70vh;
+        width: 40vh;
         border: solid .2em antiquewhite;
         border-radius: 4%;
-        padding: 0px;
+        padding: 10px;
+    }
+
+    button {
+        border-radius: 50px;
+        height: 80%;
+        width: 60%;
+        background-color: rgb(82, 82, 82);
+        color: white;
+        font-size: 5vh;
+        border: none;
+        transition: 0.4s;
+    }
+
+    .clear, .zero {
+        grid-column: span 2;
+        width: 75%;
+        height: 80%;
     }
 }
