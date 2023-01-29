@@ -92,8 +92,8 @@ button:hover, .activated {
 
     button {
         border-radius: 50px;
-        height: 80%;
-        width: 60%;
+        height: 6.5vh;
+        width: 6.5vh;
         background-color: rgb(82, 82, 82);
         color: white;
         font-size: 5vh;
@@ -103,7 +103,7 @@ button:hover, .activated {
 
     .clear, .zero {
         grid-column: span 2;
-        width: 75%;
-        height: 80%;
+        width: 14vh;
+        height: 7vh;
     }
 }
