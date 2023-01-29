@@ -78,7 +78,7 @@ button:hover, .activated {
     filter: brightness(200%);
 }
 
-@media  (max-width: 600px) {
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
     div.container {
         background-color: black;
         display: flex;
