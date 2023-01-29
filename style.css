@@ -78,3 +78,32 @@ button:hover, .activated {
 .activated {
     filter: brightness(200%);
 }
+
+@media  (max-width: 600px) {
+    *  {
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+        user-select: none;
+        touch-action: manipulation;
+    }
+
+    body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: rgb(77, 77, 77);
+    }
+
+    div.container {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vh;
+        border: solid .2em antiquewhite;
+        border-radius: 4%;
+        padding: 0px;
+    }
+}
