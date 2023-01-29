@@ -52,12 +52,11 @@ body {
 button {
     border-radius: 50px;
     height: 90%;
-    width: 90%;
+    width: 75%;
     background-color: rgb(82, 82, 82);
     color: white;
     font-size: 5vh;
     border: none;
-
     transition: 0.4s;
 }
 
@@ -79,29 +78,13 @@ button:hover, .activated {
     filter: brightness(200%);
 }
 
-@media  (max-width: 700px) {
-    *  {
-        font-family: Arial, Helvetica, sans-serif;
-        box-sizing: border-box;
-        user-select: none;
-        touch-action: manipulation;
-    }
-
-    body {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: rgb(77, 77, 77);
-    }
-
+@media  (max-width: 600px) {
     div.container {
         background-color: black;
         display: flex;
         flex-direction: column;
-        height: 80vh;
-        width: 80vh;
+        height: 60vh;
+        width: 35vh;
         border: solid .2em antiquewhite;
         border-radius: 4%;
         padding: 0px;
