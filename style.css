@@ -77,34 +77,3 @@ button:hover, .activated {
 .activated {
     filter: brightness(200%);
 }
-
-@media only screen and (max-width: 600px) {
-    div.container {
-        background-color: black;
-        display: flex;
-        flex-direction: column;
-        height: 70vh;
-        width: 40vh;
-        border: solid .2em antiquewhite;
-        border-radius: 4%;
-        padding: 10px;
-    }
-
-    button {
-        border-radius: 50px;
-        height: 6.5vh;
-        width: 5.8vh;
-        background-color: rgb(82, 82, 82);
-        color: white;
-        font-size: 5vh;
-        border: none;
-        transition: 0.4s;
-    }
-
-    .clear, .zero {
-        grid-column: span 2;
-        width: 14vh;
-        height: 7vh;
-    }
-
-}
