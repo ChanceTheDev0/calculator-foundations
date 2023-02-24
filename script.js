@@ -44,9 +44,11 @@ let result = 0;
 
 function updateDisplay(btn) {
     if (btn.classList.contains("number")) {
-        currentNumber += btn.innerHTML;
-        currentExpression += btn.innerHTML;
-        display.innerHTML = currentExpression;
+        if (currentNumber.length < maxDigits) { 
+            currentNumber += btn.innerHTML;
+            currentExpression += btn.innerHTML;
+            display.innerHTML = currentExpression;
+        }
     } else if (btn.classList.contains("operator")) {
         currentExpression += btn.innerHTML;
         let num = parseFloat(currentNumber);
